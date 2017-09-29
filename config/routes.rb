@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'movie/show'
+
   root 'home#index'
+  
+  resources :movie, only: :show
 
   devise_for :users, controllers: {registrations: "users/registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
