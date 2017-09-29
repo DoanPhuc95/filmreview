@@ -1,2 +1,19 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+          <h1 class="page-header">Top Ratings</h1>
+          <% @top_rate.each do |t| %>
+              <%= render 'home/top_rate', item: t %>
+          <% end %>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Top Newest</h1>
+            <% @top_newest.each do |t| %>
+                <%= render 'home/top_newest', item: t %>
+            <% end %>
+        </div>
+    </div>
+</div

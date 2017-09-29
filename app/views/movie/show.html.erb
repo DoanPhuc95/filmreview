@@ -1,0 +1,41 @@
+<div class="article-section container">
+    
+    <div class="row">
+        <div class="col-md-4 product-images">
+            <% if @movie.image.nil? %>
+                <%= image_tag "http://placehold.it/500x500", class: "img-responsive" %>
+            <% else %>
+                <%= image_tag @movie.image, class: "img-responsive" %>
+            <% end %>
+        </div>
+        <div class="col-md-8">
+            <div id="comment-top" style="cursor: pointer;" class="comment-count"><%=@movie.comment.count %> comment(s)</div>
+            <br>
+			<div style="padding-top: 8px">
+				<input id="rating1" value="<%=@rate_point%>">
+			</div>
+			<p class="spec-text">SPECIFICATIONS</p>
+			<ul>
+				<li><b class="spec-type">Brand:</b> </li>
+				<li><b class="spec-type">Model:</b> </li>
+				<li><b class="spec-type">RAM:</b> </li>
+				<li><b class="spec-type">VGA:</b> </li>
+				<li><b class="spec-type">Disk:</b> </li>
+				<li><b class="spec-type">Screen:</b> </li>
+				<li><b class="spec-type">OS:</b> </li>
+				<li><b class="spec-type">Battery:</b> </li>
+				<li><b class="spec-type">Price:</b> </li>
+			</ul>
+        </div>
+    </div>
+    
+    <br>
+    
+    <div class="row overview-section">
+        <h4 class="h4-title">Description</h4>
+        <br>
+        <p></p><%= @movie.description %></p>
+        <br>
+    </div>
+
+</div>
