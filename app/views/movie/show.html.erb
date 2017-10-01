@@ -1,5 +1,6 @@
 <div class="article-section container">
-    
+    <h1 class="text-center story-header"><%= @movie.name %></h1>
+    <br>
     <div class="row">
         <div class="col-md-4 product-images">
             <% if @movie.image.nil? %>
@@ -9,22 +10,26 @@
             <% end %>
         </div>
         <div class="col-md-8">
-            <div id="comment-top" style="cursor: pointer;" class="comment-count"><%=@movie.comment.count %> comment(s)</div>
-            <br>
-			<div style="padding-top: 8px">
-				<input id="rating1" value="<%=@rate_point%>">
-			</div>
+            <div id="comment-top" style="cursor: pointer;" class="comment-count">
+                <%= pluralize @movie.comment.count, "comment" %>
+            </div>
+            <br><br>
+			<div style="cursor: pointer" class="comment-count">
+			    <%= pluralize @movie.rate.count, "rate" %> : <%= average_rate(@movie) %> / 5
+			    </div>
+	        <br><br>
 			<p class="spec-text">SPECIFICATIONS</p>
 			<ul>
-				<li><b class="spec-type">Brand:</b> </li>
-				<li><b class="spec-type">Model:</b> </li>
-				<li><b class="spec-type">RAM:</b> </li>
-				<li><b class="spec-type">VGA:</b> </li>
-				<li><b class="spec-type">Disk:</b> </li>
-				<li><b class="spec-type">Screen:</b> </li>
-				<li><b class="spec-type">OS:</b> </li>
-				<li><b class="spec-type">Battery:</b> </li>
-				<li><b class="spec-type">Price:</b> </li>
+				<li><b class="spec-type">Producer:</b> <%= @movie.producer %></li>
+				<li><b class="spec-type">Year:</b> </li>
+				<li><b class="spec-type">Episode:</b> </li>
+				<li><b class="spec-type">Actor:</b> </li>
+				<li><b class="spec-type">Category:</b> </li>
+				
+				<!--<li><b class="spec-type">Screen:</b> </li>-->
+				<!--<li><b class="spec-type">OS:</b> </li>-->
+				<!--<li><b class="spec-type">Battery:</b> </li>-->
+				<!--<li><b class="spec-type">Price:</b> </li>-->
 			</ul>
         </div>
     </div>
@@ -34,8 +39,25 @@
     <div class="row overview-section">
         <h4 class="h4-title">Description</h4>
         <br>
-        <p></p><%= @movie.description %></p>
-        <br>
+        <p><%= @movie.description %></p>
     </div>
-
+    
+    <div class="detailed-review-body"></div>
+    
+    <h3 class="comment-title">Comments</h3>
+    <div class="comment-section">
+        <div class="row">
+            <%= render "movie/comment", movie: @movie %>
+            <div class="col-sm-12">
+                <% if user_signed_in? %>
+                    <%= form_for @comment, url: comment_index_path do |t| %>
+                        <%= t.text_field :content, class: "form-control", autocomplete: "off",
+                            placeholder: "Write a comment ..." %>
+                        <%= t.hidden_field :user_id, value: current_user.id %>
+                        <%= t.hidden_field :movie_id, value: @movie.id  %>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
 </div>

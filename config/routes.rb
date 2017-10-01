@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  get 'comment/create'
+
   get 'movie/show'
 
   root 'home#index'
   
-  resources :movie, only: :show
-
+  resources :movie, only: :show  
+  
+  resources :comment, only: :create
+  
+  
+  
   devise_for :users, controllers: {registrations: "users/registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
