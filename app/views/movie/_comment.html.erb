@@ -1,4 +1,4 @@
-<div class="col-sm-12">
+<div class="col-sm-12" id="comment-row-<%= cmt.id %>">
     <div class="panel-shadow">
         <div class="post-heading">
             <div class="row">
@@ -9,9 +9,34 @@
                     <a class="user-name" href="#">
                         <b><%= cmt.user.name %></b>
                     </a>
-                    <p class="cmt-content"><%= cmt.content %></p>
+                    <p class="cmt-content" id="cmt-content-<%= cmt.id %>"><%= cmt.content %></p>
+                    <%= form_for cmt, url: comment_path(cmt),remote: true, id: "form-edit-#{cmt.id}" do |t| %>
+                        <%= t.text_field :content, class:"cmt-input form-control", id:"comment-input-#{cmt.id}",
+                            onkeyup:"edit_event(#{cmt.id})", autocomplete:"off" %>
+                    <% end %>
                     <h6 class="text-muted time"><%= time_ago_in_words cmt.created_at %></h6>
                 </div>
+                <% if show_option? cmt %>
+                    <div class="col-md-1 dropdown menu-option" id="dropdown-<%= cmt.id %>" >
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-option-horizontal"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li>
+                                <%= link_to edit_comment_path(cmt), remote: true do %>
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <span>Edit</span>    
+                                <% end %>
+                            </li>
+                            <li>
+                                <%= link_to comment_path(cmt), method: :delete, remote: true do %>
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                    <span>Delete</span>
+                                <% end %>
+                            </li>
+                        </ul>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>

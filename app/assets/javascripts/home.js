@@ -1,4 +1,4 @@
-$( document ).ready(function(){
+$(document).ready(function(){
   $('.multi-item-carousel .item').each(function(){
     var next = $(this).next();
     if (!next.length) {

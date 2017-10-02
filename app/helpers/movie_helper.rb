@@ -20,4 +20,9 @@ module MovieHelper
         
         number_with_precision rate_sum / movie.rate.count, precision: 1 
     end
+    
+    def show_option? cmt
+        return false unless user_signed_in?
+        return cmt.user_id == current_user.id
+    end
 end
