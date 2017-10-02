@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   
   resources :movie, only: :show  
   
-  resources :comment, only: :create
+  resources :comment, only: [:create, :edit, :update, :destroy]
   
   
   

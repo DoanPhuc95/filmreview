@@ -19,6 +19,16 @@ $gray: #d7d7d7;
 .panel-shadow {
   border-right: 1px solid $gray;
   border-left: 1px solid $gray;
+  
+  &:hover {
+    .menu-option {
+      display: block;
+    }
+  }
+}
+
+.menu-option {
+  display: none;
 }
 
 .post-heading {
