@@ -46,11 +46,15 @@
     
     <h3 class="comment-title">Comments</h3>
     <div class="comment-section">
+        <div class="row" id="comment-row">
+            <% get_comments(@movie).each do |comment| %>
+                <%= render "movie/comment", cmt: comment %>
+            <% end %>
+        </div>
         <div class="row">
-            <%= render "movie/comment", movie: @movie %>
             <div class="col-sm-12">
                 <% if user_signed_in? %>
-                    <%= form_for @comment, url: comment_index_path do |t| %>
+                    <%= form_for @comment, url: comment_index_path, remote: true do |t| %>
                         <%= t.text_field :content, class: "form-control", autocomplete: "off",
                             placeholder: "Write a comment ..." %>
                         <%= t.hidden_field :user_id, value: current_user.id %>

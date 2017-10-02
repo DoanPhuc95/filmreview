@@ -2,11 +2,13 @@ class CommentController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      flash[:warning]= "You commented on this review"
+      @comment_count = Movie.find_by(id: params[:comment][:movie_id]).comment.count
+      respond_to do |format|
+        format.js
+      end
     else
       flash[:warning]= "You can not comment on this review"
     end
-    redirect_to root_path
   end
   
   private

@@ -1,0 +1,3 @@
+$("#comment-row").append("<%= j (render "movie/comment", cmt: @comment) %>");
+$("#comment_content").val("");
+$("#comment-top").text("<%= pluralize @comment_count, "comment" %>");
