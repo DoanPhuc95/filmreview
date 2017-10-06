@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
-  
+  resources :category, only: :index
   resources :profile, only: [:index, :update]
   resources :movie, only: [:show, :index]  
-  
+  resources :actor, only: :show
   resources :comment, only: [:create, :edit, :update, :destroy]
   devise_for :users, controllers: {registrations: "users/registrations"}
   

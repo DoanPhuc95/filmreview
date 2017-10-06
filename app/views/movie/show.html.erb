@@ -18,13 +18,29 @@
 			    <%= pluralize @movie.rate.count, "rate" %> : <%= average_rate(@movie) %> / 5
 			    </div>
 	        <br><br>
-			<p class="spec-text">SPECIFICATIONS</p>
+			<p class="spec-text">MOVIE DETAILS</p>
 			<ul>
 				<li><b class="spec-type">Producer:</b> <%= @movie.producer %></li>
 				<li><b class="spec-type">Year:</b> </li>
 				<li><b class="spec-type">Episode:</b> </li>
-				<li><b class="spec-type">Actor:</b> </li>
-				<li><b class="spec-type">Category:</b> </li>
+				<li><b class="spec-type">Actor:</b> 
+				    <% get_actors(@movie).each.with_index do |t, i| %>
+				        <% if i==0 %>
+				            <%= link_to "#{t.name}", t %>
+			            <% else %>
+			                ; <%= link_to "#{t.name}", t %>
+		                <% end %>
+				    <% end %>
+				</li>
+				<li><b class="spec-type">Category:</b> 
+				    <% get_categories(@movie).each.with_index do |t, i| %>
+				        <% if i==0 %>
+				            <%= link_to "#{get_category t.value}", category_index_path(value: t.value) %>
+			            <% else %>
+			                ; <%= link_to "#{get_category t.value}", category_index_path(value: t.value) %>
+		                <% end %>
+				    <% end %>
+				</li>
 				
 				<!--<li><b class="spec-type">Screen:</b> </li>-->
 				<!--<li><b class="spec-type">OS:</b> </li>-->

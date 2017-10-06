@@ -37,17 +37,17 @@
 # end
 
 #Category
-30.times do |t|
-    movie_id = t+1
-    rand_count = rand(3)
-    rand_count.times do
-        value = rand(19)
-        while !Category.find_by(movie_id: movie_id, value: value).nil?
-            value = rand(19)
-        end
-        Category.create!(value: value, movie_id: movie_id)
-    end
-end
+# 30.times do |t|
+#     movie_id = t+1
+#     rand_count = rand(3)
+#     rand_count.times do
+#         value = rand(19)
+#         while !Category.find_by(movie_id: movie_id, value: value).nil?
+#             value = rand(19)
+#         end
+#         Category.create!(value: value, movie_id: movie_id)
+#     end
+# end
 
 #Rate
 # 20.times do

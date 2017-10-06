@@ -1,0 +1,6 @@
+<h1>Actor#show</h1>
+<p>Find me in app/views/actor/show.html.erb</p>
+
+<% movies_of_actor(@actor).each do |t| %>
+    <%= link_to "#{t.name}", t %><br>
+<% end %>

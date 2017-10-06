@@ -1,0 +1,9 @@
+<h1>Category#index</h1>
+<p>Find me in app/views/category/index.html.erb</p>
+<% unless @category.nil? %>
+    <h1><%= get_category @category_value.to_i %></h1>
+    
+    <% @category.each do |t| %>
+        <%= link_to "#{get_movies(t).name}", get_movies(t) %><br>
+    <% end %>
+<% end %>
