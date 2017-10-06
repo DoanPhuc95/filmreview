@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if user.save
       flash.now[:succes]="successfully created your account"
       sign_in user
-      redirect_to root_url
+      redirect_to :back
     else
       flash.now[:danger]="failed to create your account, please try again"
       redirect_to root_url

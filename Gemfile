@@ -24,3 +24,5 @@ gem 'devise'
 gem "faker", "1.7.3"
 gem 'jquery-rails'
 gem 'bootstrap-sass', '3.3.7'
+gem 'carrierwave'
+gem 'cloudinary'
