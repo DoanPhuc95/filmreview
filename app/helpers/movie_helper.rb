@@ -3,14 +3,6 @@ module MovieHelper
         movie.comment.order("created_at ASC")
     end
     
-    def get_avatar comment
-        if comment.user.avatar.nil?
-            return "https://www.timeshighereducation.com/sites/default/files/byline_photos/default-avatar.png"
-        end
-        
-        comment.user.avatar
-    end
-    
     def average_rate movie
         return 0 if movie.rate.count == 0
         

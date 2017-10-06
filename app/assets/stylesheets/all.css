@@ -93,3 +93,7 @@ header {
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.row-space {
+    padding-top: 15px;
+}

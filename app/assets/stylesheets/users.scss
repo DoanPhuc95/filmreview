@@ -1,9 +1,45 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$main-background: rgba(0, 0, 0, 0.5);
+
 .image-profile {
   width: 100%;
   height: 270px;
+}
+
+.user-heading {
+  width: 22%;
+  padding: 0;
+  margin: 0 15px;
+  
+     &:hover {
+    .upload-pic {
+      opacity: 1;
+      transition: all .5s ease;
+
+      span {
+        position: relative;
+        top: -5px;
+        right: 90px;
+      }
+    }
+  }
+  
+  &:hover:after {
+    opacity: 1;
+  }
+
+  &:after {
+    background-color: $main-background;
+    content: "";
+    transition: all .3s ease;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+  }
+
 }
 
 .update-button {
@@ -21,4 +57,28 @@
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+}
+
+.upload-pic {
+  opacity: 0;
+  z-index: 2;
+  display: inline-block;
+  font-size: 2.2em;
+  float: left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  padding: 20px 20px;
+  margin: 0 15px 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+  &:focus, &:hover {
+    color: #fff;
+  }
+}
+
+.image-form-for {
+  display: none !important;
 }
