@@ -2,14 +2,14 @@
     <h1 class="text-center story-header"><%= @movie.name %></h1>
     <br>
     <div class="row">
-        <div class="col-md-4 product-images">
+        <div class="col-md-4 product-images" id="rate_star">
             <% if @movie.image.nil? %>
                 <%= image_tag "http://placehold.it/500x500", class: "img-responsive" %>
             <% else %>
                 <%= image_tag @movie.image, class: "img-responsive" %>
             <% end %>
             <% if user_signed_in? %>
-                <%= render 'movie/rate_form', rate: @rate %>
+                <%= render 'movie/star_form', rate: @rate %>
             <% end %>
         </div>
         <div class="col-md-8">

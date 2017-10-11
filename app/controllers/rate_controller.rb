@@ -2,9 +2,10 @@ class RateController < ApplicationController
   before_action :find_rate, only: :update
   
   def create
-    rate = Rate.new(rate_params)
-    if rate.save
-      @movie = rate.movie
+    @rate = Rate.new(rate_params)
+    if @rate.save
+      @movie = @rate.movie
+      @url = rate_path(@rate)
       respond_to do |format|
         format.js
       end

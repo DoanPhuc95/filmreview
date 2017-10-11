@@ -1,1 +1,3 @@
 $("#average_rate").html("<%= pluralize rate_count(@movie), "rate" %> : <%= average_rate(@movie) %> / 5");
+$("#rate_form").remove();
+$("#rate_star").append("<%= j (render "movie/rate_form", rate: @rate) %>");
