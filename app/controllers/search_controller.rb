@@ -4,8 +4,7 @@ class SearchController < ApplicationController
   def index
     @title = params_name
     if @title.blank?
-      @count = Movie.count
-      @result = Kaminari.paginate_array(Movie.order(:name).to_a).page(params[:page]).per(24)
+      redirect_to movie_index_path
     else
       @result = Kaminari.paginate_array(search_result).page(params[:page]).per(24)
     end
