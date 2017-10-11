@@ -5,6 +5,8 @@ class Movie < ActiveRecord::Base
     has_many :actor_movie
     has_many :actor, through: :actor_movie
     
+    belongs_to :producer
+    
     validates :name, presence: true
     validates :description, presence: true
     validates :producer, presence: true

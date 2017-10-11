@@ -1,0 +1,20 @@
+<div class="stars">
+    <% (1..5).each do |t| %>
+        <% if @rate.value == 6-t %>
+            <input class="star star-<%= 6-t %>" id="star-<%= 6-t %>" type="radio"
+                name="star" onchange="rating(<%= 6-t %>)" checked />
+        <% else %>
+            <input class="star star-<%= 6-t %>" id="star-<%= 6-t %>" type="radio"
+                name="star" onchange="rating(<%= 6-t %>)" />
+        <% end %>
+        <label class="star star-<%= 6-t %>" for="star-<%= 6-t %>"></label>    
+    <% end %>
+</div>
+
+<div id="rate_form">
+    <%= form_for rate, url: @url, remote: true do |t| %>
+        <%= t.number_field :value, min: 1, max: 5, class:"image-form-for"%>
+        <%= t.hidden_field :user_id, value: current_user.id %>
+        <%= t.hidden_field :movie_id, value: @movie.id  %>
+    <% end %>
+</div>

@@ -1,23 +1,19 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">All movies</h1>
-        <% @movies.each do |t| %>
+        <h1 class="page-header">Actor</h1>
+        <% @actors.each do |t| %>
           <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-top: 20px; height: 300px">
               <div class="thumbnail" style="background-color: #2a3b46; height: 100%">
                 <%= link_to t do %>
                   <div style="height: 60%; width: 100%">
-                    <% if t.image.nil? %>
-                      <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
-                    <% else %>
-                      <%= image_tag t.image, class: "img-responsive" %>
-                    <% end %>
+                    <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
                   </div>
                 <% end %>
                 <div class="item-description">
                   <%= link_to t do %>
                     <p class="item-name"><%= t.name %></p>
                   <% end %>
-                  <p class="item-detail-review"><%= pluralize comments_count(t), "Comment" %></p>
+                  <p class="item-detail-review"><%= pluralize movies_count(t), "Movie" %></p>
                 </div>
               </div>
           </div>
@@ -25,4 +21,4 @@
     </div>
 </div>
 
-<div class="text-center paginate-bar"><%= paginate @movies, theme: 'twitter-bootstrap-3' %></div>
+<div class="text-center paginate-bar"><%= paginate @actors, theme: 'twitter-bootstrap-3' %></div>

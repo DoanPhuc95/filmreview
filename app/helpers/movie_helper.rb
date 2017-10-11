@@ -3,6 +3,10 @@ module MovieHelper
         movie.comment.order("created_at ASC")
     end
     
+    def get_producer movie
+        movie.producer.name
+    end
+    
     def average_rate movie
         return 0 if movie.rate.count == 0
         
@@ -25,43 +29,43 @@ module MovieHelper
     def get_category value
         case value
             when 0
-                return "Phim hành động"
+                return "Action"
             when 1
-                return "Phim hài hước"
+                return "Comedy"
             when 2
-                return "Phim cổ trang"
+                return "Historical Drama"
             when 3
                 return "Drama"
             when 4
-                return "Phim viễn tưởng"
+                return "Fantasy"
             when 5
-                return "Phim võ thuật"
+                return "Kungfu"
             when 6
-                return "Phim thần thoại"
+                return "Mystery"
             when 7
-                return "Phim thể thao- âm nhạc"
+                return "War"
             when 8
-                return "Phim chiến tranh"
+                return "Thriller - Horror"
             when 9
-                return "Phim kinh dị"
+                return "Psychological"
             when 10
-                return "Phim tâm lý"
+                return "Family"
             when 11
-                return "Phim gia đình"
+                return "Crime"
             when 12
-                return "Phim hình sự"
+                return "Animation"
             when 13
-                return "Phim hồi hộp, gay cấn"
+                return "Documentary"
             when 14
-                return "Phim hoạt hình"
+                return "Adventure"
             when 15
-                return "Phim tài liệu"
+                return "18 +"
             when 16
-                return "Phim phiêu lưu"
+                return "Romance"
             when 17
-                return "Phim tình cảm, lãng mạn"
+                return "Mystery"
             when 18
-                return "Phim bí ẩn, siêu nhiên"
+                return "Sport - Musical"
             else
                 return ""
         end

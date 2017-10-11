@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  get 'top/index'
+
   root 'home#index'
+  resources :rate, only: [:create, :update]
+  resources :producer, only: [:index, :show]
   resources :category, only: :index
   resources :profile, only: [:index, :update]
-  resources :movie, only: [:show, :index]  
-  resources :actor, only: :show
+  resources :movie, only: [:index, :show]  
+  resources :actor, only: [:index, :show]
   resources :comment, only: [:create, :edit, :update, :destroy]
   devise_for :users, controllers: {registrations: "users/registrations"}
   

@@ -11,7 +11,7 @@
       <div class="item-description">
       <p class="item-name"><%= item.name %></p>
       <p class="item-detail-review"><%= pluralize comments_count(item), "Comment" %></p>
-      <p class="homepage-star"><%= time_ago_in_words item.created_at %></p>
+      <p class="homepage-star"><%= time_ago_in_words item.created_at %> ago</p>
     </div>
     <% end %>
   </div>

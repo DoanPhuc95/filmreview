@@ -72,3 +72,25 @@ html[xmlns] .slides {display: block;}
 .flex-direction-nav li a.prev {background:url('prev.png') no-repeat center;bottom:40px;}
 .flex-caption { display:none;}
 }
+
+$main-background: rgba(0, 0, 0, 0.5);
+
+.option-ladder {
+  padding: 0 4px;
+  
+  &:hover {
+    .option-cell {
+      background-color: $main-background !important;
+    }
+  }
+}
+
+.sub-container {
+  width: 100%;
+  
+  a {
+    display: inline-block;
+    width: 19%;
+    padding: 15px 5px;
+  }
+}

@@ -4,14 +4,17 @@
   <title>Filmreview</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
   <div class="col-lg-10 col-lg-offset-1">
     <%= render 'layouts/header' %>
     
     <div class="container">
+      
+      <%= render 'layouts/option_navbar' %>
+      
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
@@ -20,6 +23,5 @@
     
     <%= render 'layouts/footer' %>
   </div>
-  
 </body>
 </html>

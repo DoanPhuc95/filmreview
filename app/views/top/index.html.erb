@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= @title %></h1>
+        <% if @title == "Top Ratings" %>
+            <% @movies.each do |t| %>
+              <%= render 'home/top_rate', item: t %>
+            <% end %>
+        <% else %>
+            <% @movies.each do |t| %>
+              <%= render 'home/top_newest', item: t %>
+            <% end %>
+        <% end %>
+    </div>
+</div>
+
+<div class="text-center paginate-bar"><%= paginate @movies, theme: 'twitter-bootstrap-3' %></div>
