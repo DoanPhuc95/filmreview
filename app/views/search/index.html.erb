@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= pluralize @count ,"result" %> for '<%= @title %>'</h1>
+        <% @result.each do |t| %>
+            <% if t.class == Movie %>
+                <%= render 'search/movie', t: t %>  
+            <% elsif t.class == Actor %>
+                <%= render 'search/actor', t: t %>  
+            <% end %>
+        <% end %>
+    </div>
+</div>
+<div class="text-center paginate-bar"><%= paginate @result, theme: 'twitter-bootstrap-3' %></div>

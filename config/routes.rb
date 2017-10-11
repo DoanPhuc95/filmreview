@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'top/index'
 
   root 'home#index'
+  resources :autocomplete, only: :index, format: :json
+  resources :search, only: :index
   resources :rate, only: [:create, :update]
   resources :producer, only: [:index, :show]
   resources :category, only: :index

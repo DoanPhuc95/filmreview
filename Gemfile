@@ -28,3 +28,4 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem "jquery-ui-rails"
