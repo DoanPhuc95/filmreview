@@ -8,4 +8,8 @@ module HomeHelper
         
         name
     end
+    
+    def get_year
+        Movie.group(:year).count.map{|key, val| key}
+    end
 end

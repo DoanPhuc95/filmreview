@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :rate, only: [:create, :update]
   resources :producer, only: [:index, :show]
   resources :category, only: :index
+  resources :year, only: :index
   resources :profile, only: [:index, :update]
   resources :movie, only: [:index, :show]  
   resources :actor, only: [:index, :show]

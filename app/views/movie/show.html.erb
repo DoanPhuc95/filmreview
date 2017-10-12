@@ -26,8 +26,8 @@
 				<li><b class="spec-type">Producer:</b>
 				    <%= link_to "#{get_producer @movie}", @movie.producer %>
 				</li>
-				<li><b class="spec-type">Year:</b> </li>
-				<li><b class="spec-type">Episode:</b> </li>
+				<li><b class="spec-type">Year:</b> <%= link_to "#{@movie.year}", year_index_path(year: @movie.year) %></li>
+				<li><b class="spec-type">Episode:</b> <%= @movie.episode %></li>
 				<li><b class="spec-type">Actor:</b> 
 				    <% get_actors(@movie).each.with_index do |t, i| %>
 				        <% if i==0 %>

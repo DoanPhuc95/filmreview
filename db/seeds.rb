@@ -25,6 +25,8 @@
 #     name = "Kingsman #{t}"
 #     description = Faker::Hipster.paragraphs
 #     producer_id = Producer.order("RANDOM()").first.id
+#     episode = rand(24) + 1
+#     year = rand(10) + 2008
 #     if t%5 == 0
 #         image = "https://i.ytimg.com/vi/6Nxc-3WpMbg/maxresdefault.jpg"
 #     elsif t%5==1
@@ -36,7 +38,7 @@
 #     else t%5==4
 #         image = "https://lumiere-a.akamaihd.net/v1/images/image_ccc4b657.jpeg"
 #     end
-#     Movie.create!(name: name, description: description, producer_id: producer_id, image: image)
+#     Movie.create!(name: name, description: description, producer_id: producer_id, image: image, year: year, episode: episode)
 # end
 
 #Actor
@@ -62,16 +64,16 @@
 # end
 
 #Rate
-20.times do
-    user_id = User.order("RANDOM()").first.id
-    movie_id = Movie.order("RANDOM()").first.id
-    while !Rate.find_by(user_id: user_id, movie_id: movie_id).nil?
-        user_id = User.order("RANDOM()").first.id
-        movie_id = Movie.order("RANDOM()").first.id
-    end
-    value = rand(5)+1
-    Rate.create!(user_id: user_id, movie_id: movie_id, value: value)
-end
+# 20.times do
+#     user_id = User.order("RANDOM()").first.id
+#     movie_id = Movie.order("RANDOM()").first.id
+#     while !Rate.find_by(user_id: user_id, movie_id: movie_id).nil?
+#         user_id = User.order("RANDOM()").first.id
+#         movie_id = Movie.order("RANDOM()").first.id
+#     end
+#     value = rand(5)+1
+#     Rate.create!(user_id: user_id, movie_id: movie_id, value: value)
+# end
 
 #Comment
 # 30.times do

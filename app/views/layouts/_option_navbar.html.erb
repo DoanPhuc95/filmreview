@@ -27,7 +27,14 @@
       <%= link_to "Top Reviews", top_index_path(act: "Top Reviews"), class: "navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <a class="navbar-brand" href="#">Year</a>
+      <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" >Year</a>
+      <div class="dropdown-menu sub-container">
+        <ul>
+          <% get_year.each do |t| %>
+            <%= link_to "#{t}", year_index_path(year: t) %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </nav>
