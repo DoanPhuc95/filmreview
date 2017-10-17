@@ -6,7 +6,7 @@ class TopController < ApplicationController
           .sort_by{|x| -x.last}
       @movies = Kaminari.paginate_array(top_rate).page(params[:page]).per(24)
     elsif params_index == "Top Reviews"
-      @movies = Kaminari.paginate_array(Movie.all.sort{|t| t.comment.count}.reverse)
+      @movies = Kaminari.paginate_array(Movie.all.sort{|t| t.comments.count}.reverse)
         .page(params[:page]).per(24)
     elsif params_index == "Top Newest"
       @movies = Movie.order("created_at DESC").page(params[:page]).per(24)

@@ -2,7 +2,7 @@ class CommentController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      @comment_count = Movie.find_by(id: params[:comment][:movie_id]).comment.count
+      @comment_count = Movie.find_by(id: params[:comment][:movie_id]).comments.count
       respond_to do |format|
         format.js
       end
@@ -33,7 +33,9 @@ class CommentController < ApplicationController
   def destroy
     @param_id = params[:id]
     @comment = find_comment @param_id
+    movie = @comment.movie
     if @comment.destroy
+      @comment_count = movie.comments.count
       respond_to do |format|
         format.js
       end
