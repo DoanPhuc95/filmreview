@@ -1,6 +1,6 @@
 module HomeHelper
     def comments_count item
-        item.comment.count
+        item.comments.count
     end
     
     def read_more name
