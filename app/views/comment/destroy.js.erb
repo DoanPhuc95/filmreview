@@ -1,1 +1,2 @@
 $("#comment-row-<%= @param_id %>").remove();
+$("#comment-top").text("<%= pluralize @comment_count, "comment" %>");
