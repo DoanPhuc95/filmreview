@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default col-lg-8 col-lg-offset-2">
+<nav class="navbar navbar-default col-lg-offset-1 option-nav-width">
   <div class="container-fluid">
     <div class="navbar-header option-ladder">
       <%= link_to "New Movies", top_index_path(act: "Top Newest"), class: "navbar-brand option-cell" %>
@@ -7,7 +7,7 @@
       <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" >Categories</a>
       <div class="dropdown-menu sub-container">
         <ul>
-          <%= link_to "All movies", movie_index_path %>
+          <%= link_to "All movies", movies_path %>
           <% 19.times do |t| %>
             <%= link_to "#{get_category t}", category_index_path(value: t) %>
           <% end %>
@@ -38,4 +38,4 @@
     </div>
   </div>
 </nav>
-<br><br><br>
+<br>

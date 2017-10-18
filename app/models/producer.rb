@@ -1,5 +1,5 @@
 class Producer < ActiveRecord::Base
-    has_many :movie
+    has_many :movies
     
     validates :name, uniqueness: true
 end

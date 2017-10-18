@@ -1,3 +1,6 @@
+#Admin
+# User.create!(email:"admin@gmail.com" , admin:true, name: "Admin", password:"admin@123")
+
 #Users
 # 30.times do |t|
 #     name = Faker::GameOfThrones.character

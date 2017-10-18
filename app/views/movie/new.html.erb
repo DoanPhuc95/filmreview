@@ -1,0 +1,66 @@
+<%= form_for @movie do |f| %>
+<div class="article-section container">
+    <br>
+    <div class="spec-form row">
+        <div class="col-md-4 product-images new-movie-form image-form">
+            <%= image_tag "http://www.3ciemme.it/images/joomlart/demo/default.jpg", class: "img-responsive",
+                id:"img_movie"%>
+            <%= link_to "#", class:"upload-img-form", onclick:"choose_movie_image()" do %>
+                <span class="glyphicon glyphicon-camera"></span>
+            <% end %>
+            <%= f.file_field :image, class:"image-form-for", onchange:"show_image('')" %>
+        </div>
+        <div class="col-md-6">
+            <div class="field ">
+                <%= f.label :name %>
+                <%= f.text_field :name, class:"form-field form-control" %>
+            </div>
+            <div class="field space-vertical">
+                <%= f.label :producer %>
+                <%= f.text_field :producer, class:"form-field form-control" %>
+            </div>
+            
+            <div class="field space-vertical">
+                <%= label_tag :actor %>
+                <%= text_field_tag :actor, nil, class:"form-field form-control" %>
+            </div>
+            
+            <div class="col-md-6 episode-form space-vertical">
+                <div class="field">
+                    <%= f.label :episode %>
+                    <%= f.number_field :episode, class:"form-field form-control", min: 1, value:1 %>
+                </div>
+            </div>
+            <div class="col-md-6 year-form space-vertical">
+                <div class="field">
+                    <%= f.label :year %>
+                    <%= f.number_field :year, class:"form-field form-control", min: 1995, value:2017 %>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-11 space-vertical">
+            <h2>Category</h2>
+            <div class="field category-border col-md-11">
+                <% 19.times do |t| %>
+                    <ul class="space-horizotal">
+                        <%= label_tag "#{get_category t}" %>
+                        <%= check_box_tag "category[#{t.to_s}]" %>
+                    </ul>
+                <% end %>
+            </div>
+        </div>
+        <br>
+        <div class="col-md-11 space-vertical">
+            <h2>Description</h2>
+            <div class="field description-border col-md-11">
+                <%= f.text_area :description, class:"description-form", id:"description-txt", 
+                    wrap:"hard", onkeyup:"auto_expand()" %>
+            </div>
+        </div>
+        <div class="actions col-md-12 space-vertical">
+          <%= f.submit "Post", class: "login-button post-btn col-lg-offset-9" %>
+        </div>
+    </div>
+</div
+<% end %>
