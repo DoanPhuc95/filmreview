@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :category, only: :index
   resources :year, only: :index
   resources :profile, only: [:index, :update]
-  resources :movie, only: [:index, :show]  
+  resources :movies, controller: "movie", only: [:index, :show, :new, :create]  
   resources :actor, only: [:index, :show]
   resources :comment, only: [:create, :edit, :update, :destroy]
   devise_for :users, controllers: {registrations: "users/registrations"}

@@ -4,24 +4,38 @@
   <title>Filmreview</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="col-lg-10 col-lg-offset-1">
-    <%= render 'layouts/header' %>
+  <% if is_admin? %>
     
-    <div class="container">
-      
+    <%= render 'layouts/header' %>
+    <div class="col-lg-10 col-lg-offset-1" style="padding-left: 100px">
       <%= render 'layouts/option_navbar' %>
-      
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
-      <%= yield %>
+    </div>
+    <%= render 'layouts/admin_navbar' %>
+    <div class="w3-main" style="margin-left:250px;padding-top:70px;">
+      <div class="w3-container">
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+      </div>
     </div>
     
-    <%= render 'layouts/footer' %>
-  </div>
+  <% else %>
+    
+    <div class="col-lg-10 col-lg-offset-1">
+      <%= render 'layouts/header' %>
+      <div class="container">
+        
+        <%= render 'layouts/option_navbar' %>
+        
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
+  
+  <% end %>
 </body>
 </html>

@@ -1,6 +1,6 @@
 module MovieHelper
     def get_comments movie
-        movie.comment.order("created_at ASC")
+        movie.comments.order("created_at ASC")
     end
     
     def get_producer movie
@@ -8,13 +8,13 @@ module MovieHelper
     end
     
     def average_rate movie
-        return 0 if movie.rate.count == 0
+        return 0 if movie.rates.count == 0
         
-        rate_sum = movie.rate.sum(:value).to_f
+        rate_sum = movie.rates.sum(:value).to_f
         
-        return (rate_sum/movie.rate.count).to_i if rate_sum%movie.rate.count == 0
+        return (rate_sum/movie.rates.count).to_i if rate_sum%movie.rates.count == 0
         
-        number_with_precision rate_sum / movie.rate.count, precision: 1 
+        number_with_precision rate_sum / movie.rates.count, precision: 1 
     end
     
     def show_option? cmt
@@ -23,7 +23,7 @@ module MovieHelper
     end
     
     def get_categories movie
-        movie.category
+        movie.categories
     end
     
     def get_category value
@@ -72,6 +72,6 @@ module MovieHelper
     end
     
     def get_actors movie
-        movie.actor
+        movie.actors
     end
 end

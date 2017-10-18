@@ -8,6 +8,6 @@ module RateHelper
     end
     
     def rate_count movie
-        movie.rate.count
+        movie.rates.count
     end
 end
