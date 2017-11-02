@@ -61,11 +61,6 @@
 		                <% end %>
 				    <% end %>
 				</li>
-				
-				<!--<li><b class="spec-type">Screen:</b> </li>-->
-				<!--<li><b class="spec-type">OS:</b> </li>-->
-				<!--<li><b class="spec-type">Battery:</b> </li>-->
-				<!--<li><b class="spec-type">Price:</b> </li>-->
 			</ul>
         </div>
     </div>
@@ -99,4 +94,17 @@
             </div>
         </div>
     </div>
+    <br>
+    <% if user_signed_in? %>
+        <h4>Recommend Movies</h4>
+        <div class="comment-section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <% @recommend_movie.each do |t| %>
+                        <%= render 'home/top_newest', item: t %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    <% end %>
 </div>

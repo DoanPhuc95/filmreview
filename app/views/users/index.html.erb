@@ -1,30 +1,11 @@
 <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12" id="parrent_list_movies">
         <h1 class="page-header">Users</h1>
-        <% @users.each do |t| %>
-          <% unless t.is_admin? %>
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-top: 20px; height: 300px"
-              id="panel_user_<%= t.id %>">
-              <div class="thumbnail" style="background-color: #2a3b46; height: 100%">
-                <%= link_to profile_path(t) do %>
-                  <div style="height: 60%; width: 100%; display: flex; justify-content: center">
-                    <%= image_tag get_avatar(t), class:"img-responsive avatar-admin-list" %>
-                  </div>
-                <% end %>
-                <div class="item-description">
-                  <%= link_to profile_path(t) do %>
-                    <p class="item-name"><%= t.name %></p>
-                  <% end %>
-                  <p class="item-detail-review"><%= t.email %></p>
-                  <p class="item-detail-review">
-                      <%= link_to "Remove", profile_path(t), method: :delete, remote: true %>
-                  </p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+        <%= render 'layouts/admin_search', orient: "user"%>
+        <div id="no-results">
+            <br>
+            <h2 class="col-md-offset-1">No results</h2>
+        </div>
+        <%= render 'users/list_user', users: @users %>
     </div>
 </div>
-
-<div class="text-center paginate-bar"><%= paginate @users, theme: 'twitter-bootstrap-3' %></div>

@@ -1,0 +1,11 @@
+$("#list_movies").remove();
+<% if @action == "movie" %>
+    $("#parrent_list_movies").append("<%= j (render 'movie_managers/list_movie', movies: @movies) %>")    
+<% else %>
+    $("#parrent_list_movies").append("<%= j (render 'users/list_user', users: @movies) %>")
+<% end %>
+<% if @movies.blank? %>
+    $('#no-results').show();
+<% else %>
+    $('#no-results').hide();
+<% end %>

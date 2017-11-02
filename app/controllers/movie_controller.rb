@@ -23,6 +23,7 @@ class MovieController < ApplicationController
   end
   
   def show
+    @recommend_movie = Movie.order("RANDOM()").limit(4)
     @rate = find_rate
     if @rate.nil?
       @rate = Rate.new

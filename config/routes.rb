@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin_searches/index'
+
   get 'users/index'
 
   get 'top/index'

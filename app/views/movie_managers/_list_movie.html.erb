@@ -1,0 +1,24 @@
+<div id="list_movies">
+  <% movies.each do |t| %>
+    <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-top: 20px; height: 300px">
+        <div class="thumbnail" style="background-color: #2a3b46; height: 100%">
+          <%= link_to t do %>
+            <div style="height: 60%; width: 100%">
+              <% if t.image.nil? %>
+                <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
+              <% else %>
+                <%= image_tag t.image, class: "img-responsive" %>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="item-description">
+            <%= link_to t do %>
+              <p class="item-name"><%= t.name %></p>
+            <% end %>
+            <p class="item-detail-review"><%= pluralize comments_count(t), "Comment" %></p>
+          </div>
+        </div>
+    </div>
+  <% end %>
+  <div class="text-center paginate-bar col-lg-12"><%= paginate movies, theme: 'twitter-bootstrap-3' %></div>
+</div>
