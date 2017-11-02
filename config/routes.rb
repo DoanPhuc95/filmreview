@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   get 'top/index'
 
   root 'home#index'
+  resources :profiles, only: [:show, :update, :destroy]
   resources :autocomplete, only: :index, format: :json
   resources :search, only: :index
   resources :rate, only: [:create, :update]
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
   resources :category, only: :index
   resources :year, only: :index
   resources :profile, only: [:index, :update]
-  resources :movies, controller: "movie", only: [:index, :show, :new, :create]  
+  resources :movies, controller: "movie"  
   resources :actor, only: [:index, :show]
   resources :comment, only: [:create, :edit, :update, :destroy]
   devise_for :users, controllers: {registrations: "users/registrations"}

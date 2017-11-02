@@ -86,3 +86,18 @@ $main-background: rgba(0, 0, 0, 0.5);
 .avatar-admin {
   width:46px;
 }
+
+.avatar-admin-list {
+  height: 174px;
+  width: 174px;
+  border-radius: 50%;
+  object-fit: cover
+}
+
+.action-users-manager {
+  color: #23527;
+  
+  &.hover {
+    color: white;
+  }
+}

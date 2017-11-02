@@ -1,0 +1,86 @@
+<br><br>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Profile</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 user-heading" align="center">
+        <%= image_tag get_avatar(@user), class:"image-profile" %>
+        <%= link_to "#", class:"upload-pic", onclick:"chooseImage()" do %>
+            <span class="glyphicon glyphicon-camera"></span>
+        <% end %>
+        <%= form_for @user, url: profile_path(@user) do |t| %>
+          <%= t.file_field :avatar, class:"image-form-for", onchange:"changeImage(#{current_user.id})" %>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+      <div class="col-md-9 col-lg-9 ">
+        <table class="table table-user-information">
+          <tbody>
+          <tr>
+            <td>Name</td>
+            <td><%= @user.name%></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><a href="mailto:<%= @user.email%>"><%= @user.email%></a></td>
+          </tr>
+
+          <tr>
+            <td>Gender</td>
+            <td><%= @user.gender %></td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+          <i class="glyphicon glyphicon-edit"></i>
+      </button>
+  </div>
+</div>
+
+<!-------------------------------------- Modal -------------------------------------->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1 class="modal-title">Edit Profile</h1>
+      </div>
+      <%= form_for @user, url: profile_path(@user), class: 'login-form' do |f| %>
+          <div class="modal-body">
+      
+              <div class="field row-space">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, class: "login-field form-control" %>
+              </div>
+              
+              <div class="field row-space">
+                <%= f.label :name %><br/>
+                <%= f.text_field :name, class: "login-field form-control" %>
+              </div>
+          
+              <div class="field row-space">
+                <%= f.label :gender %><br/>
+                <%= f.select(:gender, ['Male','Female', "Gay", "Les"], {}, class: "form-control")%>
+              </div>
+              <%= f.hidden_field :avatar %>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <div class="actions">
+              <%= f.submit "Save", class: "login-button" %>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>

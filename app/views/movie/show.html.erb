@@ -1,13 +1,28 @@
 <div class="article-section container">
     <h1 class="text-center story-header"><%= @movie.name %></h1>
+    <!------------------------------------------->
+    <% if user_signed_in? and current_user.is_admin? %>
+        <div class="col-lg-offset-10">
+            <div onclick="show_menu()">
+                <div class="edit-menu"></div>
+                <div class="edit-menu"></div>
+                <div class="edit-menu"></div>
+            </div>
+            <ul class="dropdown-content drpdwn-menu" id="menu">
+                <%= link_to edit_movie_path(@movie) do %>
+                    <i class="fa fa-pencil fa-fw"></i>  Edit this Review
+                <% end %>
+                <%= link_to @movie, method: :delete do %>
+                    <i class="fa fa-times fa-fw"></i>  Delete this Review
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <!------------------------------------------->
     <br>
     <div class="row">
         <div class="col-md-4 product-images" id="rate_star">
-            <% if @movie.image.nil? %>
-                <%= image_tag "http://placehold.it/500x500", class: "img-responsive" %>
-            <% else %>
-                <%= image_tag @movie.image, class: "img-responsive" %>
-            <% end %>
+            <%= image_tag get_movie_image(@movie), class: "img-responsive" %>
             <% if user_signed_in? %>
                 <%= render 'movie/star_form', rate: @rate %>
             <% end %>
