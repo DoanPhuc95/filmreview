@@ -4,6 +4,7 @@ function auto_expand()
    textarea.style.height = '77px';
    const contentHeight = document.getElementById("description-txt").scrollHeight;
    textarea.style.height = contentHeight + 'px';
+   $(document).scrollTop($(document).height());
 }
 
 function choose_movie_image() 
@@ -23,3 +24,13 @@ function show_image()
       reader.readAsDataURL(event.target.files[0]);
    }
 }
+
+function show_menu()
+{
+   $("#menu").toggle();
+}
+
+$( document ).on('turbolinks:load', function() {
+ auto_expand();
+ $(document).scrollTop(0);
+})

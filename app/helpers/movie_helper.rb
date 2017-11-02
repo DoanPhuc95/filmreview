@@ -74,4 +74,26 @@ module MovieHelper
     def get_actors movie
         movie.actors
     end
+    
+    def get_actors_text movie
+        actors = movie.actors
+        text = ""
+        actors.each.with_index do |t, i|
+            if i == 0
+                text += t.name
+            else
+                text += ", #{t.name}"
+            end
+        end
+        return text
+    end
+    
+    def category_is_checked? category, value
+        return category.find_by(value: value)
+    end
+    
+    def get_movie_image movie
+        return "http://www.3ciemme.it/images/joomlart/demo/default.jpg" if movie.image.nil?
+        return movie.image
+    end
 end

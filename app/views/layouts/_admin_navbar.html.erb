@@ -12,18 +12,15 @@
     <h5>Dashboard</h5>
   </div>
   <div class="w3-bar-block">
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <!--<a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>-->
     <%= link_to new_movie_path, class:"w3-bar-item w3-button w3-padding" do %>
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>  New Reviews
+      <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>  New Reviews
     <% end %>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Views</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Geo</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  General</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
+    <%= link_to users_index_path, class:"w3-bar-item w3-button w3-padding" do %>
+      <i class="fa fa-users fa-fw"></i>  User Manager
+    <% end %>
     <%= link_to profile_index_path, class:"w3-bar-item w3-button w3-padding" do %>
-      <i class="fa fa-cog fa-fw"></i>  Edit Profile
+      <i class="fa fa-user fa-fw"></i>  Edit Profile
     <% end %>
     <%= link_to edit_user_registration_path, class:"w3-bar-item w3-button w3-padding" do %>
       <i class="fa fa-cog fa-fw"></i>  Change password
