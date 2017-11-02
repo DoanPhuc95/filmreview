@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'top/index'
 
   root 'home#index'
+  resources :movie_managers, only: :index
   resources :profiles, only: [:show, :update, :destroy]
   resources :autocomplete, only: :index, format: :json
   resources :search, only: :index
