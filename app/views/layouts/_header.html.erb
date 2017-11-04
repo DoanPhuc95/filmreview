@@ -4,9 +4,11 @@
     <nav>
       <ul class="nav navbar-nav"><div class="space-200px"></div></ul>
       <ul class="nav navbar-nav">
-        <li>
-          <%= render 'layouts/search' %>          
-        </li>
+        <% unless user_signed_in? and current_user.is_admin? %>
+          <li>
+            <%= render 'layouts/search' %>          
+          </li>
+        <% end %>
       </ul>
       <% if !is_admin? %>
         <ul class="nav navbar-nav navbar-right">

@@ -12,11 +12,8 @@
   <% if is_admin? %>
     
     <%= render 'layouts/header' %>
-    <div class="col-lg-10 col-lg-offset-1" style="padding-left: 100px">
-      <%= render 'layouts/option_navbar' %>
-    </div>
     <%= render 'layouts/admin_navbar' %>
-    <div class="w3-main" style="margin-left:250px;padding-top:70px;">
+    <div class="w3-main" style="margin-left:250px">
       <div class="w3-container">
         <%= yield %>
         <%= render 'layouts/footer' %>

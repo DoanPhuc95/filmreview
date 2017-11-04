@@ -1,0 +1,11 @@
+<%= form_tag admin_searches_index_path, method: :get, class: "navbar-form", remote: true do %>
+  <div class="form-group col-md-offset-2">
+    <%= text_field_tag "movie_name", params[:movie_name], class: "form-control search-form",
+      autocomplete: "off", placeholder:"Search" %>
+  </div>
+  <div class="form-group">
+    <%= select_tag 'category', options_for_select(options(orient)), class:"form-control" %>
+  </div>
+  <%= hidden_field_tag :act, orient %>
+  <span><%= button_tag "Search", class:"btn btn-primary btn-lg" %></span>
+<% end %>
