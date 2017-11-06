@@ -10,21 +10,27 @@
   <hr>
   <div class="w3-container">
     <h5>Dashboard</h5>
+    <p><%= request.original_url %></p>
   </div>
   <div class="w3-bar-block">
-    <%= link_to movie_managers_path, class:"w3-bar-item w3-button w3-padding w3-blue" do %>
+    <%= link_to movie_managers_path, class:"w3-bar-item w3-button w3-padding 
+      #{'w3-blue' if is_movie_manager}" do %>
       <i class="fa fa-file-video-o fa-fw" aria-hidden="true"></i>  Movies Manager
     <% end %>
-    <%= link_to new_movie_path, class:"w3-bar-item w3-button w3-padding" do %>
+    <%= link_to new_movie_path, class:"w3-bar-item w3-button w3-padding
+      #{'w3-blue' if is_movie_new}" do %>
       <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>  New Reviews
     <% end %>
-    <%= link_to users_index_path, class:"w3-bar-item w3-button w3-padding" do %>
+    <%= link_to users_index_path, class:"w3-bar-item w3-button w3-padding
+      #{'w3-blue' if is_user_manager}" do %>
       <i class="fa fa-users fa-fw"></i>  Users Manager
     <% end %>
-    <%= link_to profile_index_path, class:"w3-bar-item w3-button w3-padding" do %>
+    <%= link_to profile_index_path, class:"w3-bar-item w3-button w3-padding 
+      #{'w3-blue' if is_user_edit}" do %>
       <i class="fa fa-user fa-fw"></i>  Edit Profile
     <% end %>
-    <%= link_to edit_user_registration_path, class:"w3-bar-item w3-button w3-padding" do %>
+    <%= link_to edit_user_registration_path, class:"w3-bar-item w3-button w3-padding
+      #{'w3-blue' if is_change_password}" do %>
       <i class="fa fa-cog fa-fw"></i>  Change password
     <% end %><br>
     <%= link_to destroy_user_session_path, method: :delete, class:"w3-bar-item w3-button w3-padding" do %>
