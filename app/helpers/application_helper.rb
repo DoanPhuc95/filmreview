@@ -6,4 +6,36 @@ module ApplicationHelper
         end
         return false
     end
+    
+    def is_movie_manager url
+        return true if url.include? "movie_managers"
+        return true if url.include? "movies" and !url.include? "new"
+        
+        return false
+    end
+    
+    def is_movie_new url
+        return true if url.include? "movies/new"
+        
+        return false
+    end
+    
+    def is_user_manager url
+        return true if url.include? "users/index"
+        return true if url.include? "profiles/"
+        
+        return false
+    end
+    
+    def is_profile url
+        return true if url.include? "profile/"
+        
+        return false
+    end
+    
+    def is_user_edit url
+        return true if url.include? "users/edit"
+        
+        return false
+    end
 end
