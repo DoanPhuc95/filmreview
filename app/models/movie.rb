@@ -7,7 +7,7 @@ class Movie < ActiveRecord::Base
     
     belongs_to :producer
     
-    # mount_uploader :image, ImageUploader
+    mount_uploader :image, ImageUploader
     
     validates :name, presence: true
     validates :description, presence: true

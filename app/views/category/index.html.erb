@@ -7,17 +7,31 @@
                 <%= link_to get_movies t do %>
                   <div style="height: 60%; width: 100%">
                     <% if get_movies(t).image.nil? %>
-                      <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
+                      <%= image_tag "http://placehold.it/400x300", class: "img-responsive img-res" %>
                     <% else %>
-                      <%= image_tag get_movies(t).image, class: "img-responsive" %>
+                      <%= image_tag get_movies(t).image, class: "img-responsive img-res" %>
                     <% end %>
                   </div>
                 <% end %>
                 <div class="item-description">
                   <%= link_to get_movies(t) do %>
-                    <p class="item-name"><%= get_movies(t).name %></p>
+                    <p class="item-name"><%= cut_off get_movies(t).name %></p>
                   <% end %>
                   <p class="item-detail-review"><%= pluralize comments_count(get_movies(t)), "Comment" %></p>
+                  <p class="homepage-star">
+                    <% average_rating = average_rate(get_movies(t)).to_f %>
+                    <% if average_rating <= 1.5 %>
+                      <%= number_with_precision(average_rating, precision: 1) %> '★☆☆☆☆'
+                    <% elsif average_rating <= 2.5 %>
+                      <%= number_with_precision(average_rating, precision: 1) %> '★★☆☆☆'
+                    <% elsif average_rating <= 3.5 %>
+                      <%= number_with_precision(average_rating, precision: 1) %> '★★★☆☆'
+                    <% elsif average_rating <= 4.5 %>
+                      <%= number_with_precision(average_rating, precision: 1) %> '★★★★☆'
+                    <% else %>
+                      <%= number_with_precision(average_rating, precision: 1) %> '★★★★★'
+                    <% end %>
+                  </p>
                 </div>
               </div>
           </div>

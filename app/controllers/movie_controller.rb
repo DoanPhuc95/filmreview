@@ -132,12 +132,16 @@ class MovieController < ApplicationController
     current_actors.each do |t|
       ActorMovie.find_by(actor: t, movie: @movie).destroy unless actors.include? t.name
     end
+    return if actors.blank?
     actors.each do |actor_name|
-      unless current_actors.find_by name: actor_name
+      if !current_actors.find_by name: actor_name
         new_actor = Actor.new name: actor_name
         if new_actor.save
           ActorMovie.create! actor: new_actor, movie: @movie
         end
+      else
+        actor = Actor.find_by name: actor_name
+        ActorMovie.create! actor: actor, movie: @movie
       end
     end
   end

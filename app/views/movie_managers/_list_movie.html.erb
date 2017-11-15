@@ -5,15 +5,15 @@
           <%= link_to t do %>
             <div style="height: 60%; width: 100%">
               <% if t.image.nil? %>
-                <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
+                <%= image_tag "http://placehold.it/400x300", class: "img-responsive img-res" %>
               <% else %>
-                <%= image_tag t.image, class: "img-responsive" %>
+                <%= image_tag t.image, class: "img-responsive img-res" %>
               <% end %>
             </div>
           <% end %>
           <div class="item-description">
             <%= link_to t do %>
-              <p class="item-name"><%= t.name %></p>
+              <p class="item-name"><%= cut_off t.name %></p>
             <% end %>
             <p class="item-detail-review"><%= pluralize comments_count(t), "Comment" %></p>
           </div>

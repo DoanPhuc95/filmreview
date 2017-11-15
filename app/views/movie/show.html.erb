@@ -29,7 +29,7 @@
         </div>
         <div class="col-md-8">
             <div id="comment-top" style="cursor: pointer;" class="comment-count" onclick="commentFocus()">
-                <%= pluralize @movie.comments.count, "comment" %>
+                <%= pluralize @movie.comments.count, "Comment" %>
             </div>
             <br><br>
 			<div style="cursor: pointer" class="comment-count" id="average_rate">
@@ -100,8 +100,25 @@
         <div class="comment-section">
             <div class="row">
                 <div class="col-lg-12">
-                    <% @recommend_movie.each do |t| %>
-                        <%= render 'home/top_newest', item: t %>
+                    <% @recommend_movie.each do |item| %>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb" style="margin-top: 20px; height: 300px">
+                              <div class="thumbnail" style="background-color: #2a3b46; height: 100%">
+                                <%= link_to item do %>
+                                  <div style="height: 60%; width: 100%">
+                                    <% if item.image.nil? %>
+                                      <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
+                                    <% else %>
+                                      <%= image_tag item.image, class: "img-responsive img-res" %>
+                                    <% end %>
+                                  </div>
+                                  <div class="item-description">
+                                  <p class="item-name"><%= cut_off_2 item.name %></p>
+                                  <p class="item-detail-review"><%= pluralize comments_count(item), "Comment" %></p>
+                                  <p class="homepage-star"><%= time_ago_in_words item.created_at %> ago</p>
+                                </div>
+                                <% end %>
+                              </div>
+                            </div>
                     <% end %>
                 </div>
             </div>
