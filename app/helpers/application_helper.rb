@@ -43,4 +43,22 @@ module ApplicationHelper
         
         return false
     end
+    
+    def cut_off name
+        if name.length > 20
+            name_ = name[0..17] + "..."
+            return name_
+        end
+        
+        return name
+    end
+    
+    def cut_off_2 name
+        if name.length > 15
+            name_ = name[0..12] + "..."
+            return name_
+        end
+        
+        return name
+    end
 end
