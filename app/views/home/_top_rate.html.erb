@@ -5,13 +5,13 @@
         <% if item[0].image.nil? %>
           <%= image_tag "http://placehold.it/400x300", class: "img-responsive" %>
         <% else %>
-          <%= image_tag item[0].image, class: "img-responsive" %>
+          <%= image_tag item[0].image, class: "img-responsive img-res" %>
         <% end %>
       </div>
     <% end %>
     <div class="item-description">
       <%= link_to item[0] do %>
-        <p class="item-name"><%= item[0].name %></p>
+        <p class="item-name"><%= cut_off(item[0].name) %></p>
       <% end %>
       <p class="item-detail-review"><%= pluralize comments_count(item[0]), "Comment" %></p>
       <p class="homepage-star">

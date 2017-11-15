@@ -74,8 +74,8 @@
 }
 .comment-count {
   background: #E20309;
-  text-transform: uppercase;
-  border-bottom: 2px solid #A9050B;
+  /*text-transform: uppercase;*/
+  /*border-bottom: 2px solid #A9050B;*/
   font-size: 18px;
   padding: 4px;
   color: #FFFFFF;
@@ -124,4 +124,11 @@
   font-weight: 800;
   font-size: 50px;
   line-height: 55px;
+}
+
+#comment-top, #average_rate {
+  background-color: #2E75A8;
+  border-radius: 5px;
+  padding: 10px;
+  font-family: serif;
 }
