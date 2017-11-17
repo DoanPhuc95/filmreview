@@ -1,10 +1,13 @@
 function auto_expand()
 {
    const textarea = document.getElementById("description-txt");
-   textarea.style.height = '77px';
-   const contentHeight = document.getElementById("description-txt").scrollHeight;
-   textarea.style.height = contentHeight + 'px';
-   $(document).scrollTop($(document).height());
+   if(textarea != null)
+   {
+      textarea.style.height = '77px';
+      const contentHeight = document.getElementById("description-txt").scrollHeight;
+      textarea.style.height = contentHeight + 'px';
+      $(document).scrollTop($(document).height());
+   }
 }
 
 function choose_movie_image() 
