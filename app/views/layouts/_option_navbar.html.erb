@@ -1,13 +1,13 @@
 <nav class="navbar navbar-default col-lg-offset-1 option-nav-width">
   <div class="container-fluid">
     <div class="navbar-header option-ladder">
-      <%= link_to "New Movies", top_index_path(act: "Top Newest"), class: "navbar-brand option-cell" %>
+      <%= link_to t("new_movie"), top_index_path(act: "Top Newest"), class: "navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" >Categories</a>
+      <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" ><%= t("category") %></a>
       <div class="dropdown-menu sub-container">
         <ul>
-          <%= link_to "All movies", movies_path %>
+          <%= link_to t("categories.all_movie"), movies_path %>
           <% 19.times do |t| %>
             <%= link_to "#{get_category t}", category_index_path(value: t) %>
           <% end %>
@@ -15,19 +15,19 @@
       </div>
     </div>
     <div class="navbar-header option-ladder">
-      <%= link_to "Producer", producer_index_path, class: "navbar-brand option-cell" %>
+      <%= link_to t("producer"), producer_index_path, class: "navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <%= link_to "Actor", actor_index_path, class:"navbar-brand option-cell" %>
+      <%= link_to t("actor"), actor_index_path, class:"navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <%= link_to "Top Ratings", top_index_path(act: "Top Ratings"), class:"navbar-brand option-cell" %>
+      <%= link_to t("top_rating"), top_index_path(act: "Top Ratings"), class:"navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <%= link_to "Top Reviews", top_index_path(act: "Top Reviews"), class: "navbar-brand option-cell" %>
+      <%= link_to t("top_review"), top_index_path(act: "Top Reviews"), class: "navbar-brand option-cell" %>
     </div>
     <div class="navbar-header option-ladder">
-      <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" >Year</a>
+      <a class="navbar-brand option-cell" href="#" data-toggle="dropdown" ><%= t("year") %></a>
       <div class="dropdown-menu sub-container">
         <ul>
           <% get_year.each do |t| %>

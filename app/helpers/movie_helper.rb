@@ -29,43 +29,43 @@ module MovieHelper
     def get_category value
         case value
             when 0
-                return "Action"
+                return t "categories.action"
             when 1
-                return "Comedy"
+                return t "categories.comedy"
             when 2
-                return "Historical Drama"
+                return t "categories.historical"
             when 3
-                return "Drama"
+                return t "categories.drama"
             when 4
-                return "Fantasy"
+                return t "categories.fantasy"
             when 5
-                return "Kungfu"
+                return t "categories.kungfu"
             when 6
-                return "Mystery"
+                return t "categories.mystery"
             when 7
-                return "War"
+                return t "categories.war"
             when 8
-                return "Thriller - Horror"
+                return t "categories.horror"
             when 9
-                return "Psychological"
+                return t "categories.psychological"
             when 10
-                return "Family"
+                return t "categories.family"
             when 11
-                return "Crime"
+                return t "categories.crime"
             when 12
-                return "Animation"
+                return t "categories.anime"
             when 13
-                return "Documentary"
+                return t "categories.documentary"
             when 14
-                return "Adventure"
+                return t "categories.adventure"
             when 15
-                return "18 +"
+                return t "categories.adult"
             when 16
-                return "Romance"
+                return t "categories.romance"
             when 17
-                return "Mystery"
+                return t "categories.oscar"
             when 18
-                return "Sport - Musical"
+                return t "categories.sport_musical"
             else
                 return ""
         end

@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-lg-12">
       <h1 class="page-header">
-          <%= link_to 'Top Ratings', top_index_path(act: "Top Ratings") %>
+          <%= link_to t("top_rating"), top_index_path(act: "Top Ratings") %>
       </h1>
       <% @top_rate.each do |t| %>
           <%= render 'home/top_rate', item: t %>
@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            <%= link_to 'Top Newest', top_index_path(act: "Top Newest") %>
+            <%= link_to t("top_newest"), top_index_path(act: "Top Newest") %>
         </h1>
         <% @top_newest.each do |t| %>
             <%= render 'home/top_newest', item: t %>

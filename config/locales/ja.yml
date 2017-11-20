@@ -1,0 +1,107 @@
+ja:
+  hello: "Hello world"
+  new_movie: "新映画"
+  category: "カテゴリ"
+  categories:
+    all_movie: "全て映画"
+    action: "アクション"
+    comedy: "コメディー"
+    historical: "史劇"
+    drama: "ドラマ"
+    fantasy: "ファンタジー"
+    kungfu: "武術"
+    mystery: "神秘"
+    war: "戦争"
+    horror: "スリラー"
+    psychological: "心理学"
+    family: "家族"
+    crime: "犯罪"
+    anime: "アニメ"
+    documentary: "ドキュメンタリー"
+    adventure: "冒険"
+    adult: "18 +"
+    romance: "ロマンチック"
+    sport_musical: "スポーツ - ミュージカル"
+    oscar: "オスカー"
+  
+  producer: "プロデューサー"
+  actor: "俳優"
+  top_rating: "トップレート"
+  top_rate: "トップレーティング"
+  top_review: "トップレビュー"
+  top_newest: "最新映画"
+  year: "年間"
+  
+  datetime:
+    distance_in_words:
+      less_than_x_minutes:
+        one: "たった今"
+        other: "%{count} 分前"
+      x_minutes:
+        one: "たった今"
+        other: "%{count} 分前"
+      about_x_hours: 
+        one: "1 時間前"
+        other: "%{count} 時間前"
+      x_days:
+        one: "1日前"
+        other: "%{count} 日前"
+      about_x_months:
+        one: "1ヶ月前"
+        other: "%{count} ヶ月前"
+      about_x_years:
+        one: "1 年前"
+        other: "%{count} 年前"
+        
+  comment: "コメント"
+  comments: "コメント"
+  write_comment: "何かをコメントする ..."
+  search: "検索"
+  new_movie: "新たな映画"
+  movie_detail: "映画の情報"
+  episode: "エピソード"
+  description: "内容"
+  recommend_movie: "お勧めの映画"
+  edit_post: "編集する"
+  delete_post: "削除する"
+  edit_cmt: " 編集する"
+  delete_cmt: " 削除する"
+  remove: "削除する"
+  
+  dashboard: "ダッシュボード"
+  welcome: "こんにちは"
+  movie_managers: "映画管理"
+  write_new_post: "新レビューを書く"
+  user_manager: "ユーザー管理"
+  edit_profile: "プロフィルを編集"
+  change_pass: "パスワード編集"
+  log_out: "サインアウト"
+  log_in: "サインイン"
+  sign_out: "サインアウト"
+  sign_in: "サインイン"
+  sign_up: "登録"
+  email: "Eメール"
+  password: "パスワード"
+  password_confirmation: "パスワード確認"
+  current_password: "先のパスワード"
+  remember_me: "自動的にサインイン"
+  forgot_password: "パスワードを忘れた！！"
+  
+  devise:
+    sessions:
+      user:
+        signed_out: "サインアウトした"
+        
+  name: "名前"
+  gender: "性別"
+  male: "男性"
+  female: "女性"
+  
+  min_lenght: "桁以上"
+  option_category: "-- カテゴリ --"
+  post: "投稿"
+  user_name: "ユーザーの名前"
+  no_result: "検索できない"
+  profile: "プロフィル"
+  save: "完了"
+  update: "アップデート"

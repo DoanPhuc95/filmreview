@@ -15,7 +15,7 @@
               <% end %>
               <p class="item-detail-review"><%= t.email %></p>
               <p class="item-detail-review">
-                  <%= link_to "Remove", profile_path(t), method: :delete, remote: true %>
+                  <%= link_to t("remove"), profile_path(t), method: :delete, remote: true %>
               </p>
             </div>
           </div>

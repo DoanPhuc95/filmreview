@@ -1,11 +1,17 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header"><%= @title %></h1>
         <% if @title == "Top Ratings" %>
+            <h1 class="page-header"><%= t("top_rate") %></h1>
             <% @movies.each do |t| %>
               <%= render 'home/top_rate', item: t %>
             <% end %>
-        <% else %>
+        <% elsif @title == "Top Reviews" %>
+            <h1 class="page-header"><%= t("top_review") %></h1>
+            <% @movies.each do |t| %>
+              <%= render 'home/top_newest', item: t %>
+            <% end %>
+        <% elsif @title == "Top Newest" %>
+            <h1 class="page-header"><%= t("new_movie") %></h1>
             <% @movies.each do |t| %>
               <%= render 'home/top_newest', item: t %>
             <% end %>

@@ -1,3 +1,8 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header"><%= t("write_new_post") %></h1>
+    </div>
+</div>
 <%= form_for @movie do |f| %>
 <div class="article-section container">
     <br>
@@ -12,35 +17,35 @@
         </div>
         <div class="col-md-6">
             <div class="field ">
-                <%= f.label :name %>
+                <%= f.label t"name" %>
                 <%= f.text_field :name, class:"form-field form-control" %>
             </div>
             <div class="field space-vertical">
-                <%= f.label :producer %>
+                <%= f.label t"producer" %>
                 <%= f.text_field :producer, class:"form-field form-control" %>
             </div>
             
             <div class="field space-vertical">
-                <%= label_tag :actor %>
+                <%= label_tag t"actor" %>
                 <%= text_field_tag :actor, nil, class:"form-field form-control" %>
             </div>
             
             <div class="col-md-6 episode-form space-vertical">
                 <div class="field">
-                    <%= f.label :episode %>
+                    <%= f.label t"episode" %>
                     <%= f.number_field :episode, class:"form-field form-control", min: 1, value:1 %>
                 </div>
             </div>
             <div class="col-md-6 year-form space-vertical">
                 <div class="field">
-                    <%= f.label :year %>
+                    <%= f.label t"year" %>
                     <%= f.number_field :year, class:"form-field form-control", min: 1995, value:2017 %>
                 </div>
             </div>
         </div>
         
         <div class="col-md-11 space-vertical">
-            <h2>Category</h2>
+            <h2><%= t("category") %></h2>
             <div class="field category-border col-md-11">
                 <% 19.times do |t| %>
                     <ul class="space-horizotal">
@@ -52,14 +57,14 @@
         </div>
         <br>
         <div class="col-md-11 space-vertical">
-            <h2>Description</h2>
+            <h2><%= t("description") %></h2>
             <div class="field description-border col-md-11">
                 <%= f.text_area :description, class:"description-form", id:"description-txt", 
                     wrap:"hard", onkeyup:"auto_expand()" %>
             </div>
         </div>
         <div class="actions col-md-12 space-vertical">
-          <%= f.submit "Post", class: "login-button post-btn col-lg-offset-9" %>
+          <%= f.submit t("post"), class: "login-button post-btn col-lg-offset-9" %>
         </div>
     </div>
 </div

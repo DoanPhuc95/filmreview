@@ -4,37 +4,37 @@
       <%= image_tag get_avatar(current_user), class:"w3-circle w3-margin-right avatar-admin" %>
     </div>
     <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong><%= current_user.name %></strong></span><br>
+      <span><%= t("welcome") %>, <strong><%= current_user.name %></strong></span><br>
     </div>
   </div>
   <hr>
   <div class="w3-container">
-    <h5>Dashboard</h5>
+    <h5><%= t("dashboard") %></h5>
     
   </div>
   <div class="w3-bar-block">
     <%= link_to movie_managers_path, class:"w3-bar-item w3-button w3-padding 
       #{'w3-blue' if is_movie_manager}" do %>
-      <i class="fa fa-file-video-o fa-fw" aria-hidden="true"></i>  Movies Manager
+      <i class="fa fa-file-video-o fa-fw" aria-hidden="true"></i>  <%= t("movie_managers") %>
     <% end %>
     <%= link_to new_movie_path, class:"w3-bar-item w3-button w3-padding
       #{'w3-blue' if is_movie_new}" do %>
-      <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>  New Reviews
+      <i class="fa fa-pencil-square-o fa-fw" aria-hidden="true"></i>  <%= t("write_new_post") %>
     <% end %>
     <%= link_to users_index_path, class:"w3-bar-item w3-button w3-padding
       #{'w3-blue' if is_user_manager}" do %>
-      <i class="fa fa-users fa-fw"></i>  Users Manager
+      <i class="fa fa-users fa-fw"></i>  <%= t("user_manager") %>
     <% end %>
     <%= link_to profile_index_path, class:"w3-bar-item w3-button w3-padding 
       #{'w3-blue' if is_user_edit}" do %>
-      <i class="fa fa-user fa-fw"></i>  Edit Profile
+      <i class="fa fa-user fa-fw"></i>  <%= t("edit_profile") %>
     <% end %>
     <%= link_to edit_user_registration_path, class:"w3-bar-item w3-button w3-padding
       #{'w3-blue' if is_change_password}" do %>
-      <i class="fa fa-cog fa-fw"></i>  Change password
+      <i class="fa fa-cog fa-fw"></i>  <%= t("change_pass") %>
     <% end %><br>
     <%= link_to destroy_user_session_path, method: :delete, class:"w3-bar-item w3-button w3-padding" do %>
-      <i class="glyphicon glyphicon-off"></i>  Log out
+      <i class="glyphicon glyphicon-off"></i>  <%= t("log_out") %>
     <% end %>
   </div>
 </nav>

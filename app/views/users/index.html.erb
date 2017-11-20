@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-lg-12" id="parrent_list_movies">
-        <h1 class="page-header">Users</h1>
+        <h1 class="page-header"><%= t("user_manager") %></h1>
         <%= render 'layouts/admin_search', orient: "user"%>
         <div id="no-results">
             <br>
-            <h2 class="col-md-offset-1">No results</h2>
+            <h2 class="col-md-offset-1"><%= t("no_result") %></h2>
         </div>
         <%= render 'users/list_user', users: @users %>
     </div>

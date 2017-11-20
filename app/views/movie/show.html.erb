@@ -10,10 +10,10 @@
             </div>
             <ul class="dropdown-content drpdwn-menu" id="menu">
                 <%= link_to edit_movie_path(@movie) do %>
-                    <i class="fa fa-pencil fa-fw"></i>  Edit this Review
+                    <i class="fa fa-pencil fa-fw"></i>  <%= t("edit_post") %>
                 <% end %>
                 <%= link_to @movie, method: :delete do %>
-                    <i class="fa fa-times fa-fw"></i>  Delete this Review
+                    <i class="fa fa-times fa-fw"></i>  <%= t("delete_post") %>
                 <% end %>
             </ul>
         </div>
@@ -36,14 +36,16 @@
 			    <%= pluralize @movie.rates.count, "rate" %> : <%= average_rate(@movie) %> / 5
 		    </div>
 	        <br><br>
-			<p class="spec-text">MOVIE DETAILS</p>
+			<p class="spec-text"><%= t("movie_detail") %></p>
 			<ul>
-				<li><b class="spec-type">Producer:</b>
+				<li><b class="spec-type"><%= t("producer") %>:</b>
 				    <%= link_to "#{get_producer @movie}", @movie.producer %>
 				</li>
-				<li><b class="spec-type">Year:</b> <%= link_to "#{@movie.year}", year_index_path(year: @movie.year) %></li>
-				<li><b class="spec-type">Episode:</b> <%= @movie.episode %></li>
-				<li><b class="spec-type">Actor:</b> 
+				<li><b class="spec-type"><%= t("year") %> :</b> 
+				    <%= link_to "#{@movie.year}", year_index_path(year: @movie.year) %>
+			    </li>
+				<li><b class="spec-type"><%= t("episode") %> :</b> <%= @movie.episode %></li>
+				<li><b class="spec-type"><%= t("actor") %> :</b> 
 				    <% get_actors(@movie).each.with_index do |t, i| %>
 				        <% if i==0 %>
 				            <%= link_to "#{t.name}", t %>
@@ -52,7 +54,7 @@
 		                <% end %>
 				    <% end %>
 				</li>
-				<li><b class="spec-type">Category:</b> 
+				<li><b class="spec-type"><%= t("category") %>:</b> 
 				    <% get_categories(@movie).each.with_index do |t, i| %>
 				        <% if i==0 %>
 				            <%= link_to "#{get_category t.value}", category_index_path(value: t.value) %>
@@ -68,13 +70,13 @@
     <br>
     
     <div class="row overview-section">
-        <h4 class="h4-title">Description</h4>
+        <h4 class="h4-title"><%= t("description") %></h4>
         <br>
         <p><%= @movie.description %></p>
     </div>
     
     <div class="detailed-review-body"></div>
-    <h3 class="comment-title">Comments</h3>
+    <h3 class="comment-title"><%= t("comments") %></h3>
     <div class="comment-section">
         <div class="row" id="comment-row">
             <% get_comments(@movie).each do |comment| %>
@@ -86,7 +88,7 @@
                 <% if user_signed_in? %>
                     <%= form_for @comment, url: comment_index_path, remote: true do |t| %>
                         <%= t.text_field :content, class: "form-control", autocomplete: "off",
-                            placeholder: "Write a comment ..." %>
+                            placeholder: t("write_comment") %>
                         <%= t.hidden_field :user_id, value: current_user.id %>
                         <%= t.hidden_field :movie_id, value: @movie.id  %>
                     <% end %>
@@ -96,7 +98,7 @@
     </div>
     <br>
     <% if user_signed_in? %>
-        <h4>Recommend Movies</h4>
+        <h4><%= t("recommend_movie") %></h4>
         <div class="comment-section">
             <div class="row">
                 <div class="col-lg-12">

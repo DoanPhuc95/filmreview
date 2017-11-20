@@ -1,7 +1,7 @@
 <br><br>
 <div class="panel panel-info">
   <div class="panel-heading">
-    <h3 class="panel-title">Profile</h3>
+    <h3 class="panel-title"><%= t("profile") %></h3>
   </div>
   <div class="panel-body">
     <div class="row">
@@ -19,16 +19,16 @@
         <table class="table table-user-information">
           <tbody>
           <tr>
-            <td>Name</td>
+            <td><%= t("name") %></td>
             <td><%= @user.name%></td>
           </tr>
           <tr>
-            <td>Email</td>
+            <td><%= t("email") %></td>
             <td><a href="mailto:<%= @user.email%>"><%= @user.email%></a></td>
           </tr>
 
           <tr>
-            <td>Gender</td>
+            <td><%= t("gender") %></td>
             <td><%= @user.gender %></td>
           </tr>
 
@@ -52,31 +52,31 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h1 class="modal-title">Edit Profile</h1>
+        <h1 class="modal-title"><%= t("edit_profile") %></h1>
       </div>
       <%= form_for @user, url: profile_path(@user), class: 'login-form' do |f| %>
           <div class="modal-body">
       
               <div class="field row-space">
-                <%= f.label :email %><br />
+                <%= f.label t"email" %><br />
                 <%= f.email_field :email, autofocus: true, class: "login-field form-control" %>
               </div>
               
               <div class="field row-space">
-                <%= f.label :name %><br/>
+                <%= f.label t"name" %><br/>
                 <%= f.text_field :name, class: "login-field form-control" %>
               </div>
           
               <div class="field row-space">
-                <%= f.label :gender %><br/>
-                <%= f.select(:gender, ['Male','Female', "Gay", "Les"], {}, class: "form-control")%>
+                <%= f.label t"gender" %><br/>
+                <%= f.select(:gender, [t('male'),t('female'), "Gay", "Les"], {}, class: "form-control")%>
               </div>
               <%= f.hidden_field :avatar %>
           </div>
           <br>
           <div class="modal-footer">
             <div class="actions">
-              <%= f.submit "Save", class: "login-button" %>
+              <%= f.submit t("save"), class: "login-button" %>
             </div>
           </div>
       <% end %>

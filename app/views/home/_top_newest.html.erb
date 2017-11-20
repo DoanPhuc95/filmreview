@@ -10,8 +10,8 @@
       </div>
       <div class="item-description">
       <p class="item-name"><%= cut_off item.name %></p>
-      <p class="item-detail-review"><%= pluralize comments_count(item), "Comment" %></p>
-      <p class="homepage-star"><%= time_ago_in_words item.created_at %> ago</p>
+      <p class="item-detail-review"><%= pluralize comments_count(item), t("comment") %></p>
+      <p class="homepage-star"><%= time_ago_in_words item.created_at %></p>
     </div>
     <% end %>
   </div>
