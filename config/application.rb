@@ -22,8 +22,8 @@ module Filmreview
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.i18n.default_locale = :ja
-    I18n.available_locales = [:en, :ja]
+    config.i18n.default_locale = :en
+    I18n.available_locales = [:en, :ja, :vi]
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
   end
 end

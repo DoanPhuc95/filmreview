@@ -1,0 +1,112 @@
+vi:
+  hello: "Hello world"
+  new_movie: "Phim mới"
+  category: "Thể loại"
+  categories:
+    all_movie: "Tất cả phim"
+    action: "Phim hành động"
+    comedy: "Phim hài hước"
+    historical: "Phim lịch sử"
+    drama: "Phim truyền hình"
+    fantasy: "Phim thần thoại"
+    kungfu: "Phim võ thuật"
+    mystery: "Phim thần bí"
+    war: "Phim chiến tranh"
+    horror: "Phim kinh dị"
+    psychological: "Phim tâm lý"
+    family: "Phim gia đình"
+    crime: "Phim tội phạm"
+    anime: "Phim hoạt hình"
+    documentary: "Phim tài liệu"
+    adventure: "Phim phiêu lưu"
+    adult: "18 +"
+    romance: "Phim lãng mạn"
+    sport_musical: "Phim thể thao - âm nhạc"
+    oscar: "Phim đoạt giải"
+  
+  producer: "Nhà sản xuất"
+  actor: "Diễn viên"
+  top_rating: "Đánh giá cao"
+  top_rate: "Đánh giá cao"
+  top_review: "Nhiều review"
+  top_newest: "Phim mới"
+  year: "Năm"
+  
+  datetime:
+    distance_in_words:
+      less_than_x_minutes:
+        one: "Vừa cập nhật"
+        other: "%{count} phút trước"
+      x_minutes:
+        one: "Vừa cập nhật"
+        other: "%{count} phút trước"
+      about_x_hours: 
+        one: "1 giờ trước"
+        other: "%{count} giờ trước"
+      x_days:
+        one: "1 ngày trước"
+        other: "%{count} ngày trước"
+      about_x_months:
+        one: "1 tháng trước"
+        other: "%{count} tháng trước"
+      about_x_years:
+        one: "1 năm trước"
+        other: "%{count} năm trước"
+        
+  comment: "Bình luận"
+  comments: "Bình luận"
+  write_comment: "Hãy bình luận gì đó ..."
+  search: "Tìm kiếm"
+  new_movie: "Phim mới"
+  movie_detail: "Thông tin chi tiết phim"
+  episode: "Tập"
+  description: "Nội dung"
+  recommend_movie: "Có thể bạn quan tâm ?"
+  edit_post: "Chỉnh sửa bài đăng"
+  delete_post: "Xóa bài đăng"
+  edit_cmt: " Chỉnh sửa bình luận"
+  delete_cmt: "Xóa bình luận"
+  remove: "Xóa"
+  
+  dashboard: "Bảng điều khiển"
+  welcome: "Xin chào"
+  movie_managers: "Quản lý phim"
+  write_new_post: "Viết bài đăng mới"
+  user_manager: "Quản lý người dùng"
+  edit_profile: "Chỉnh sửa thông tin"
+  change_pass: "Thay đổi mật khẩu"
+  log_out: "Đăng xuất"
+  log_in: "Đăng nhập"
+  sign_out: "Đăng xuất"
+  sign_in: "Đăng nhập"
+  sign_up: "Đăng kí"
+  email: "Email"
+  password: "Mật khẩu"
+  password_confirmation: "Xác nhận mật khẩu"
+  current_password: "Mật khẩu cũ"
+  remember_me: "Tự động đăng nhập"
+  forgot_password: "Quên mật khẩu！！"
+  
+  devise:
+    sessions:
+      user:
+        signed_out: "Đã đăng xuất"
+        
+  name: "Họ và tên"
+  gender: "Giới tính"
+  male: "Nam giới"
+  female: "Nữ giới"
+  
+  min_lenght: "Kí tự tối thiểu"
+  option_category: "-- Thể loại --"
+  post: "Đăng"
+  user_name: "Tên người dùng"
+  no_result: "Không thấy kết quả nào!"
+  profile: "Thông tin cá nhân"
+  save: "Hoàn thành"
+  update: "Cập nhật"
+  
+  languages: "Ngôn ngữ"
+  english: "Tiếng Anh"
+  japanese: "Tiếng Nhật"
+  vietnamese: "Tiếng Việt"

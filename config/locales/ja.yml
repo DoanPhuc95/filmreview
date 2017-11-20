@@ -105,3 +105,8 @@ ja:
   profile: "プロフィル"
   save: "完了"
   update: "アップデート"
+  
+  languages: "言語"
+  english: "英語"
+  japanese: "日本語"
+  vietnamese: "ベトナム語"

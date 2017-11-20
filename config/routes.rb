@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'i18n/index'
+
   get 'admin_searches/index'
 
   get 'users/index'
